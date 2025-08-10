@@ -1,0 +1,93 @@
+services:
+
+  joomla:
+    image: joomla
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - 8080:80
+    environment:
+      JOOMLA_DB_HOST: db
+      JOOMLA_DB_USER: joomla
+      JOOMLA_DB_PASSWORD: examplepass
+      JOOMLA_DB_NAME: joomla_db
+      JOOMLA_SITE_NAME: Joomla
+      JOOMLA_ADMIN_USER: Joomla Hero
+      JOOMLA_ADMIN_USERNAME: joomla
+      JOOMLA_ADMIN_PASSWORD: joomla@secured
+      JOOMLA_ADMIN_EMAIL: joomla@example.com
+    volumes:
+      - ./:/var/www/html
+      - ./000-default.conf:/etc/apache2/sites-enabled/000-default.conf
+    networks:
+      - joomla_network
+
+  # laravel:
+  #   build:
+  #     context: ./ccbc_backend
+  #     dockerfile: Dockerfile
+  #   restart: always
+  #   ports:
+  #     - 8000:80
+  #   environment:
+  #     - DB_CONNECTION=mysql
+  #     - DB_HOST=db
+  #     - DB_PORT=3306
+  #     - DB_DATABASE=laravel_db
+  #     - DB_USERNAME=laravel
+  #     - DB_PASSWORD=laravelpass
+  #     - JOOMLA_DB_HOST=db
+  #     - JOOMLA_DB_PORT=3306
+  #     - JOOMLA_DB_NAME=joomla_db
+  #     - JOOMLA_DB_USER=joomla
+  #     - JOOMLA_DB_PASSWORD=examplepass
+  #     - JOOMLA_DB_PREFIX=joom_
+  #   volumes:
+  #     - ./ccbc_backend:/var/www/html
+  #   depends_on:
+  #     - db
+  #   networks:
+  #     - joomla_network
+
+  db:
+    image: mysql:8.0
+    restart: always
+    ports:
+      - 3306:3306
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    environment:
+      MYSQL_DATABASE: joomla_db
+      MYSQL_USER: joomla
+      MYSQL_PASSWORD: examplepass
+      MYSQL_ROOT_PASSWORD: rootpassword
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - joomla_network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    platform: linux/amd64
+    restart: always
+    ports:
+      - 8081:80
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: rootpassword
+    depends_on:
+      - db
+    networks:
+      - joomla_network
+
+volumes:
+  db_data:
+
+networks:
+  joomla_network:

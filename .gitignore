@@ -1,0 +1,22 @@
+# Joomla core directories to ignore
+/cache/
+/logs/
+/tmp/
+
+# Configuration files
+/configuration.php
+.env
+
+# Vendor directories
+/vendor/
+/node_modules/
+
+# IDE and OS specific files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+nbproject/
+
+# Optional: User uploaded files (uncomment if not tracking)
+#/images/
