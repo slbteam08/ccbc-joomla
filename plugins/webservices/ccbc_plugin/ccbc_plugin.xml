@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="webservices" method="upgrade">
+    <name>CCBC Plugin</name>
+    <author>Nelson Cheng</author>
+    <creationDate>August 2025</creationDate>
+    <copyright>(C) 2025 CCBC Project. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later</license>
+    <version>1.0.1</version>
+    <description>CCBC Plugin Web Services API for Joomla 5</description>
+    <files>
+        <filename plugin="ccbc_plugin">ccbc_plugin.php</filename>
+    </files>
+</extension>
