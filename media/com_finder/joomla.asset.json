@@ -36,6 +36,48 @@
       "version": "ce7a61"
     },
     {
+      "name": "com_finder.indexer",
+      "type": "style",
+      "uri": "com_finder/indexer.min.css",
+      "version": "d51495"
+    },
+    {
+      "name": "com_finder.indexer",
+      "type": "script",
+      "uri": "com_finder/indexer.min.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "version": "491cd3"
+    },
+    {
+      "name": "com_finder.finder-edit",
+      "type": "script",
+      "uri": "com_finder/finder-edit.min.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "version": "ad6ab5"
+    },
+    {
+      "name": "com_finder.maps",
+      "type": "script",
+      "uri": "com_finder/maps.min.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "version": "63e1cd"
+    },
+    {
       "name": "com_finder.finder",
       "type": "style",
       "uri": "com_finder/finder.min.css",
@@ -52,48 +94,6 @@
         "type": "module"
       },
       "version": "755761"
-    },
-    {
-      "name": "com_finder.finder-edit",
-      "type": "script",
-      "uri": "com_finder/finder-edit.min.js",
-      "dependencies": [
-        "core"
-      ],
-      "attributes": {
-        "type": "module"
-      },
-      "version": "ad6ab5"
-    },
-    {
-      "name": "com_finder.indexer",
-      "type": "style",
-      "uri": "com_finder/indexer.min.css",
-      "version": "d51495"
-    },
-    {
-      "name": "com_finder.maps",
-      "type": "script",
-      "uri": "com_finder/maps.min.js",
-      "dependencies": [
-        "core"
-      ],
-      "attributes": {
-        "type": "module"
-      },
-      "version": "63e1cd"
-    },
-    {
-      "name": "com_finder.indexer",
-      "type": "script",
-      "uri": "com_finder/indexer.min.js",
-      "dependencies": [
-        "core"
-      ],
-      "attributes": {
-        "type": "module"
-      },
-      "version": "491cd3"
     }
   ]
 }

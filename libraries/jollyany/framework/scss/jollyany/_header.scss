@@ -1,0 +1,10 @@
+.astroid-header-section {
+   border-bottom: none;
+   box-shadow: none;
+   &.header-absolute {
+      position: absolute;
+      z-index: 1050;
+      width: 100%;
+      background-color: transparent !important;
+   }
+}

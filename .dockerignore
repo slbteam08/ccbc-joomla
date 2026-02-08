@@ -1,0 +1,29 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# IDE and editor
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker (avoid recursive copy)
+Dockerfile
+.dockerignore
+docker-compose*.yml
+*.md
+
+# Node modules (if any in project)
+node_modules
+
+# Build artifacts and temp files
+*.log
+.env
+.env.*

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+**
+* Updates made
+* 08-feb-21 10:39 version 4.0.1 
+* fields moduleclass_sfx and apikey made hidden - https://docs.joomla.org/Hidden_form_field_type
+* default.php - function to en_GB and 9.0 per FB developer sample
+* 09-feb-21 10:39 version 4.0.3
+* added new field for "small_header" per fb parameter list
+* removed colors etc etc version 4.1.0
+* got auto update working version 4.1.1
+* made mod version 4.2.2 - made stable 30 april 2021
+* made mod version 4.2.3 - removed version in extension 9 may 2021
+* made mod version 4.3.0 - added translation files 9th March 2022
+* made mod version 4.3.1 - updated translation files 12th March 2022
+* made mod version 5.3.1 - Modified per robbiej - https://forum.joomla.org/viewtopic.php?f=833&t=1008461
+**
+-->
+
+<!-- Standard Data provided. -->
+
+<extension type="module" method="upgrade" client="site">
+	<name>MOD_TDOCFBK</name>
+	<author>Eur Ing Richard Townsend-Rose</author>
+	<creationDate>12th March 2022</creationDate>
+	<copyright>Copyright (C) 2022 Open Source Matters. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<authorEmail>richard@tdoc.net</authorEmail>
+	<authorUrl>www.rgtr.tdocplus.co.uk</authorUrl>
+	<version>5.3.1</version>
+	<description>MOD_TDOCFBK_XML_DESCRIPTION</description>
+    <!-- added namespace -->
+    <namespace path="src">Tdoc\Module\Tdocfbk</namespace>
+
+	<files>
+		<filename module="mod_tdocfbk">mod_tdocfbk.php</filename>
+        <filename>mod_tdocfbk.xml</filename>
+		<filename>index.html</filename>
+        <!-- added new folder for helper file -->
+        <folder>src</folder>
+   		<folder>tmpl</folder>
+ 		<folder>language</folder> 
+	</files>
+
+<!-- xml file that holds the update information -->
+	<updateservers>
+		<server type="extension" name="mod_tdocfbk updates">http://wwww.tdocplus.co.uk/tdoc_j4_dev/tdoc_fbk/mod_tdocfbk_update.xml</server>
+	</updateservers>
+	
+<!-- Setup the form for the Basic tab -->
+	<config>
+		<fields name="params" addpath="/modules/mod_tdocfbk/elements">
+			<fieldset name="basic">  
+			  <!-- hidden fields -->
+			  <field name="apikey" type="hidden" default="192044219335632" label="" description="" /> 
+			  <!-- url field -->
+			  <field type="spacer" name="mandatory" label="MOD_TDOCFBK_MANDATORY" />
+              <field name="facebook_url" type="text" default=""    label="MOD_TDOCFBK_BASE_URL"   description="MOD_TDOCFBK_BASE_URL_DESC" size="50" />
+			  <!-- configuration fields -->
+			  <field type="spacer" name="Configuration" label="MOD_TDOCFBK_CONFIGURATION" />
+			  <field name="stream"       type="list" default="true" label="MOD_TDOCFBK_SHOW_POSTS" description="MOD_TDOCFBK_SHOW_POSTS_DESC">
+			    <option value="true">MOD_TDOCFBK_YES</option>
+					<option value="false">MOD_TDOCFBK_NO</option>
+			  </field>
+			  <field name="show_faces" type="list" default="false" label="MOD_TDOCFBK_SHOW_FACES" description="MOD_TDOCFBK_SHOW_FACES_DESC">
+					<option value="true">MOD_TDOCFBK_SHOW</option>
+					<option value="false">MOD_TDOCFBK_HIDE</option>
+			  </field>
+			  <field name="hide" type="list" default="false" label="MOD_TDOCFBK_HIDE_COVER" description="MOD_TDOCFBK_HIDE_COVER_DESC">
+					<option value="true">MOD_TDOCFBK_YES</option>
+					<option value="false">MOD_TDOCFBK_NO</option>
+			  </field>
+			  <field name="header" type="list" default="true" label="MOD_TDOCFBK_SMALL_HEADER" description="MOD_TDOCFBK_SMALL_HEADER_DESC">
+					<option value="true">MOD_TDOCFBK_YES</option>
+					<option value="false">MOD_TDOCFBK_NO</option>
+			  </field>
+			  <field name="connections" type="text" default="25" label="MOD_TDOCFBK_CONNECTIONS" description="MOD_TDOCFBK_CONNECTIONS_DESC" />
+			  <!-- dimension fields -->
+              <field type="spacer" name="dimensions" label="MOD_TDOCFBK_DIMENSIONS" />
+			  <field name="width"  type="text" default="300" label="MOD_TDOCFBK_WIDTH"  description="MOD_TDOCFBK_WIDTH_DESC" />
+			  <field name="height" type="text" default="700" label="MOD_TDOCFBK_HEIGHT" description="MOD_TDOCFBK_HEIGHT_DESC" />
+	    </fieldset>
+    </fields>
+  </config>
+
+</extension>

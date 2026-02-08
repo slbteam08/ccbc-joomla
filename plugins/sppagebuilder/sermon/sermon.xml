@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.8" type="plugin" group="sppagebuilder" method="upgrade">
+	<name>Addon Plugin for Sermon</name>
+	<author>mafung</author>
+	<creationDate>28 Jan 2026</creationDate>
+	<authorUrl>https://www.knockingcreative.com</authorUrl>
+	<description>Addon plugin for Sermon</description>
+	<version>1.0</version>
+
+	<files>
+		<filename plugin="sermon">sermon.php</filename>
+		<folder>addons</folder>
+	</files>
+
+
+<config>
+        <fields name="params">
+            <fieldset name="basic" label="Basic Settings">
+                <field 
+                    name="category" 
+                    type="category" 
+                    extension="com_content" 
+                    label="Category" 
+                    description="Select category to show articles from" 
+                />
+                <field 
+                    name="articles_count" 
+                    type="number" 
+                    label="Articles Count" 
+                    description="Number of articles to display" 
+                    default="6" 
+                    min="1" 
+                    max="50" 
+                />
+                <field 
+                    name="columns" 
+                    type="select" 
+                    label="Columns" 
+                    description="Number of columns for grid" 
+                    default="3"
+                >
+                    <option value="1">1 Column</option>
+                    <option value="2">2 Columns</option>
+                    <option value="3">3 Columns</option>
+                    <option value="4">4 Columns</option>
+                </field>
+            </fieldset>
+            
+            <!-- Add more fieldsets/groups for advanced options like sorting, image source, etc. -->
+            <fieldset name="advanced" label="Advanced" collapsed="true">
+                <field name="show_title" type="radio" label="Show Title" default="1">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </field>
+                <field name="custom_field" type="text" label="Custom Field Name" description="Name of custom field to display (e.g., sermon_audio)" />
+            </fieldset>
+        </fields>
+    </config>
+	
+</extension>

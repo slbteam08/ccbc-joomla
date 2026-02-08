@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<element>
+   <form>
+      <fields>
+         <fieldset name="general-settings" label="TPL_ASTROID_GENERAL_SETTINGS_LABEL" addfieldpath="/libraries/astroid/framework/fields">
+            <field name="layout_type" type="astroidlist" label="ASTROID_ELEMENT_LAYOUT_SECTION_LAYOUT_LABEL" default="">
+               <option value="">JDEFAULT</option>
+               <option value="container">ASTROID_CONTAINER</option>
+               <option value="container-fluid">ASTROID_CONTAINER_FLUID</option>
+               <option value="container-with-no-gutters">ASTROID_CONTAINER_WITH_NO_GUTTERS</option>
+               <option value="container-fluid-with-no-gutters">ASTROID_CONTAINER_FLUID_WITH_NO_GUTTERS</option>
+               <option value="no-container">ASTROID_ELEMENT_LAYOUT_SECTION_LAYOUT_OPTIONS_WITHOUT_CONTAINER</option>
+               <option value="custom-container">ASTROID_ELEMENT_LAYOUT_SECTION_LAYOUT_OPTIONS_CUSTOM</option>
+            </field>
+            <field type="astroidtext" class="form-control" label="ASTROID_ELEMENT_LAYOUT_CUSTOM_CLASS_LABEL" name="custom_container_class"/>
+         </fieldset>
+         <fieldset name="design-settings" label="ASTROID_ELEMENT_HEAD_DESIGN_SEETINGS_LABEL" addfieldpath="/libraries/astroid/framework/fields">
+            <field astroidgroup="general" name="astroid_element_tag" type="astroidlist" label="ASTROID_ELEMENT_TAG" description="ASTROID_ELEMENT_TAG_DESC" default="section">
+               <option value="div">div</option>
+               <option value="section">section</option>
+               <option value="header">header</option>
+               <option value="footer">footer</option>
+               <option value="aside">aside</option>
+               <option value="nav">nav</option>
+               <option value="article">article</option>
+               <option value="address">address</option>
+               <option value="hgroup">hgroup</option>
+               <option value="main">main</option>
+            </field>
+         </fieldset>
+      </fields>
+   </form>
+</element>

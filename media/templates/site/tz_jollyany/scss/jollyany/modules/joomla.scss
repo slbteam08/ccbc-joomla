@@ -1,0 +1,75 @@
+// Joomla Default
+@import "../../../../../../../libraries/jollyany/framework/scss/jollyany/modules/joomla";
+.blog {
+  > div:not(:first-child) {
+    article{
+      &.article-image-left, &.article-image-right {
+        padding-top: 30px;
+        @media (min-width: 1200px) {
+          padding-top: 40px;
+        }
+        border-top: 1px solid $border-color;
+      }
+    }
+  }
+}
+.article-meta-info {
+  margin-bottom: 10px;
+  > dd {
+    display: inline-block;
+    margin: 0;
+    &:not(:first-child):not(.article-post-type) {
+      &:before {
+        content: '-';
+        padding: 0 6px;
+      }
+    }
+    &.uk-margin-small-top {
+      margin-top: 5px !important;
+    }
+  }
+}
+.item-page {
+  .article-meta-info {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+  .pagenavigation {
+    margin-top: 40px;
+  }
+}
+
+.author-wrap {
+  background-color: rgba(0,0,0, 0.04);
+  border-color: $border-color;
+  margin-top: 50px;
+  .author-header {
+    border: none;
+    margin-bottom: 0;
+  }
+  .author-name {
+    margin-bottom: 10px;
+  }
+  .author-description {
+    font-size: 0.875rem;
+  }
+}
+.astroid-socialshare {
+  margin-top: 50px;
+  padding: 30px 0 25px;
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+}
+.article-image-left, .article-image-right {
+  .article-badge {
+    order: 1;
+    @media (min-width: 1200px) {
+      left: 32px;
+    }
+    left: 22px;
+  }
+}
+
+.result__title-url, .result__taxonomy {
+  color: #999;
+}

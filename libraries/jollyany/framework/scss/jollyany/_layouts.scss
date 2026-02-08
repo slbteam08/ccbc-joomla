@@ -1,0 +1,7 @@
+.astroid-layout{
+	&.astroid-layout-boxed {
+		.astroid-wrapper {
+			max-width: map-get($container-max-widths, "xl") + 100;
+		}
+	}
+}

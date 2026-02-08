@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Updated add-on type/name to "sermon" -->
+<addon type="sermon" version="4.0.0" name="sermon" author="Your Name" email="your@email.com" url="your-website.com">
+    <title>Sermon</title>
+    <description>A custom sermon card add-on for SP Page Builder (displays sermon title, preacher, date, and audio link)</description>
+    <category>Religious</category> <!-- New category for religious content -->
+    <icon>fa fa-bible</icon> <!-- Updated icon to match sermon theme -->
+    
+    <!-- Sermon-specific parameters (replaced button fields) -->
+    <fields name="settings">
+        <!-- Sermon Title -->
+        <field name="sermon_title" type="text" label="Sermon Title" default="The Power of Faith" 
+               description="Enter the main title of the sermon"/>
+        
+        <!-- Preacher/Speaker Name -->
+        <field name="preacher_name" type="text" label="Preacher Name" default="Pastor John Doe" 
+               description="Enter the name of the preacher/speaker"/>
+        
+        <!-- Sermon Date -->
+        <field name="sermon_date" type="calendar" label="Sermon Date" default="" 
+               description="Select the date the sermon was delivered" format="Y-m-d"/>
+        
+        <!-- Audio Link (for MP3/MP4 audio files) -->
+        <field name="audio_link" type="url" label="Audio Link" default="#" 
+               description="Enter the URL to the sermon audio file (MP3/MP4)"/>
+        
+        <!-- Short Excerpt -->
+        <field name="sermon_excerpt" type="textarea" label="Sermon Excerpt" default="A short reflection on the power of faith in daily life." 
+               description="Enter a brief excerpt/summary of the sermon (max 200 characters)" rows="3"/>
+        
+        <!-- Accent Color (for sermon card header) -->
+        <field name="accent_color" type="color" label="Accent Color" default="#8B4513" 
+               description="Select the accent color for the sermon card header"/>
+    </fields>
+</addon>

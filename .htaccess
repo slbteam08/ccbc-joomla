@@ -38,9 +38,12 @@ Options -Indexes
 </IfModule>
 
 ## Suppress mime type detection in browsers for unknown types
+
 <IfModule mod_headers.c>
-	Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'"
 </IfModule>
+
 
 ## Protect against certain cross-origin requests. More information can be found here:
 ## https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy_(CORP)

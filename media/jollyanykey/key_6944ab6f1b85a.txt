@@ -1,0 +1,1 @@
+O:8:"stdClass":6:{s:13:"purchase_code";s:36:"9e0cea38-4035-43d8-b761-20f4ddc3b891";s:12:"license_type";s:15:"Regular License";s:13:"purchase_date";s:10:"2025-05-09";s:15:"supported_until";s:10:"2025-11-07";s:5:"buyer";s:8:"mafung13";s:6:"domain";s:22:"http://localhost:8080/";}

@@ -1,0 +1,9 @@
+<?php
+defined('_JEXEC') or die;
+return array (
+  'COM_SPEASYIMAGEGALLERY_NO_ALBUMS' => 'No Albums',
+  'COM_SPEASYIMAGEGALLERY_NO_IMAGES' => 'No Images',
+  'COM_SPEASYIMAGEGALLERY_ERROR_ALBUM_NOT_FOUND' => 'Album not found!',
+  'COM_SPEASYIMAGEGALLERY_PHOTOS' => 'Photos',
+  'COM_SPEASYIMAGEGALLERY_PHOTO' => 'Photo',
+);

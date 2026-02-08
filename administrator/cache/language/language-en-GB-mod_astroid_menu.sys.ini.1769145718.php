@@ -1,0 +1,8 @@
+<?php
+defined('_JEXEC') or die;
+return array (
+  'MOD_ASTROID_MENU' => 'Astroid Menu',
+  'MOD_ASTROID_MENU_LAYOUT_COLLAPSE-DEFAULT' => 'Collapsible Default Menu',
+  'MOD_ASTROID_MENU_LAYOUT_DEFAULT' => 'Default',
+  'MOD_ASTROID_MENU_XML_DESCRIPTION' => 'This module displays a menu on the Frontend.',
+);

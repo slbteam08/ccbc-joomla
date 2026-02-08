@@ -1,0 +1,1 @@
+<?php die("Access Denied"); ?>#x#a:2:{s:6:"result";a:1:{i:0;a:6:{s:5:"@type";s:7:"Article";s:3:"@id";s:55:"http://192.168.1.4:8080/#/schema/com_content/article/30";s:4:"name";s:18:"認識細胞小組";s:8:"headline";s:18:"認識細胞小組";s:10:"inLanguage";s:5:"en-GB";s:8:"isPartOf";a:1:{s:3:"@id";s:45:"http://192.168.1.4:8080/#/schema/WebPage/base";}}}s:6:"output";s:0:"";}

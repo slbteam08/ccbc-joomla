@@ -30,18 +30,6 @@
       "version": "d8d12e"
     },
     {
-      "name": "com_modules.admin-module-search",
-      "type": "script",
-      "uri": "com_modules/admin-module-search.min.js",
-      "dependencies": [
-        "core"
-      ],
-      "attributes": {
-        "type": "module"
-      },
-      "version": "e6aea4"
-    },
-    {
       "name": "com_modules.admin-modules-modal",
       "type": "script",
       "uri": "com_modules/admin-modules-modal.min.js",
@@ -66,6 +54,18 @@
         "type": "module"
       },
       "version": "4dd1dc"
+    },
+    {
+      "name": "com_modules.admin-module-search",
+      "type": "script",
+      "uri": "com_modules/admin-module-search.min.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "type": "module"
+      },
+      "version": "e6aea4"
     }
   ]
 }
