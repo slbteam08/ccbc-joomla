@@ -19,6 +19,8 @@ services:
       JOOMLA_ADMIN_USERNAME: joomla
       JOOMLA_ADMIN_PASSWORD: joomla@secured
       JOOMLA_ADMIN_EMAIL: joomla@example.com
+      VIRTUAL_HOST: dev.ccbc.org.hk
+      LETSENCRYPT_HOST: dev.ccbc.org.hk
     volumes:
       - .:/var/www/html
       - ./000-default.conf:/etc/apache2/sites-enabled/000-default.conf
