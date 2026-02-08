@@ -1,7 +1,8 @@
 services:
 
   joomla:
-    image: joomla:6-apache
+    build: .
+    image: ccbc-joomla
     restart: always
     ports:
       - 8080:80
