@@ -27,4 +27,4 @@ services:
 networks:
   proxy_network:
     external: true
-    name: joomla_proxy_network
+    name: nginx_proxy_network
