@@ -21,30 +21,33 @@ jobs:
           port: 22
           script: |
             echo "🔄 Starting deployment..."
-            cd /root/ccbc-joomla
             
-            # Pull latest code
-            echo "📥 Pulling latest code from dev branch..."
-            sudo git fetch origin dev
-            sudo git reset --hard origin/dev
-            
-            # Rebuild Docker image
-            echo "🔨 Rebuilding Docker image..."
-            sudo docker compose -f docker-compose.yml build --no-cache
-            
-            # Restart containers
-            echo "♻️  Restarting containers..."
-            sudo docker compose -f docker-compose.yml up -d
-            
-            # Show status
-            echo "✅ Deployment complete!"
-            sudo docker compose -f docker-compose.yml ps
-            
-            # Clean up old images
-            echo "🧹 Cleaning up old Docker images..."
-            sudo docker image prune -f
-            
-            echo "🎉 Deploy finished at $(date)"
+            sudo bash -c '
+              cd /root/ccbc-joomla
+              
+              # Pull latest code
+              echo "📥 Pulling latest code from dev branch..."
+              git fetch origin dev
+              git reset --hard origin/dev
+              
+              # Rebuild Docker image
+              echo "🔨 Rebuilding Docker image..."
+              docker compose -f docker-compose.yml build --no-cache
+              
+              # Restart containers
+              echo "♻️  Restarting containers..."
+              docker compose -f docker-compose.yml up -d
+              
+              # Show status
+              echo "✅ Deployment complete!"
+              docker compose -f docker-compose.yml ps
+              
+              # Clean up old images
+              echo "🧹 Cleaning up old Docker images..."
+              docker image prune -f
+              
+              echo "🎉 Deploy finished at $(date)"
+            '
 
       - name: 📊 Deployment Summary
         if: success()
