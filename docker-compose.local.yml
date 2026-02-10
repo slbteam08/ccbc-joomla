@@ -1,24 +1,35 @@
 services:
 
+  db:
+    image: mariadb:10.11
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: ccbc_2025
+      MYSQL_USER: joomla
+      MYSQL_PASSWORD: examplepass
+    volumes:
+      - db_data:/var/lib/mysql
+
   joomla:
     build: .
-    image: ccbc-joomla:prod
+    image: ccbc-joomla:ro
     restart: always
     ports:
-      - 8080:80
+      - 8090:80
+    depends_on:
+      - db
     environment:
       JOOMLA_DB_HOST: db
       JOOMLA_DB_USER: joomla
       JOOMLA_DB_PASSWORD: examplepass
       JOOMLA_DB_NAME: ccbc_2025
       JOOMLA_DB_PREFIX: ccbc2025_
-      JOOMLA_SITE_NAME: Joomla
-      JOOMLA_ADMIN_USER: Joomla Hero
-      JOOMLA_ADMIN_USERNAME: joomla
-      JOOMLA_ADMIN_PASSWORD: joomla@secured
-      JOOMLA_ADMIN_EMAIL: joomla@example.com
-      VIRTUAL_HOST: dev.ccbc.org.hk
-      LETSENCRYPT_HOST: dev.ccbc.org.hk
+      JOOMLA_SITE_NAME: Joomla Local Test - Read-Only
+      JOOMLA_ADMIN_USER: Admin
+      JOOMLA_ADMIN_USERNAME: admin
+      JOOMLA_ADMIN_PASSWORD: admin123
+      JOOMLA_ADMIN_EMAIL: admin@localhost
     volumes:
       # Code is baked into the image (read-only)
       # Only mount writable directories as volumes
@@ -30,11 +41,11 @@ services:
       - joomla_plugins:/var/www/html/plugins
       - joomla_components:/var/www/html/components
       - joomla_modules:/var/www/html/modules
-    networks:
-      - proxy_network
 
 # Named volumes for Joomla writable directories
 volumes:
+  db_data:
+    driver: local
   joomla_images:
     driver: local
   joomla_tmp:
@@ -51,8 +62,3 @@ volumes:
     driver: local
   joomla_modules:
     driver: local
-
-networks:
-  proxy_network:
-    external: true
-    name: nginx_proxy_network
