@@ -24,8 +24,8 @@ docker-compose up -d
 
 1. Open your browser and go to: http://localhost:8080/administrator/
 2. Login credentials:
-   - **Username:** `joomla`
-   - **Password:** `joomla@secured`
+   - **Username:** `admin`
+   - **Password:** `ccbc8888****`
 
 ### 3. Install CCBC Plugin (if available)
 
