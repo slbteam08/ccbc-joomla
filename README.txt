@@ -76,7 +76,7 @@ The Docker setup includes the following services:
 ### Direct MySQL Connection
 - **Host**: `localhost`
 - **Port**: `3306`
-- **Database**: `joomla_db`
-- **Username**: `joomla`
-- **Password**: `examplepass`
+- **Database**: `ccbc_2025`
+- **Username**: `root`
+- **Password**: `ccbc8888****`
 - **Root Password**: `rootpassword`
